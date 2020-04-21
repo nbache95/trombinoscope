@@ -1,0 +1,9 @@
+ul{
+    display: table;
+    width: 500px;
+    margin: 100px auto;
+    padding: 0;
+}
+ul li{
+    display: table-cell;
+}
