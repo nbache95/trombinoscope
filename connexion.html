@@ -1,0 +1,70 @@
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<title> Trombinoscope </title>
+		
+		<!-- importer le fichier de style -->
+
+		<link rel="stylesheet" type="text/css" href="./style.css"/>
+	</head>
+	<body>
+		<header>
+			<h1> Espace Etudiant </h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="nbache-trombinoscope-pedag.000webhostapp.com">Plateforme dédiée à l'équipe pédagogique</a></li>
+					<li><a href="etu.html">Plateforme dédiée aux étudiants</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		
+		<div>
+			<ul>
+					<li><a href="inscription.html">S'inscrire</a></li>
+					<li><a href="connexion.html">Connexion</a></li>
+				</ul>
+		</div>
+		<div id="formulaire">
+			<form action="./process.php" method="get">
+			<p> Entrer votre login : </p>
+			<input type="text" name="login"/><br/>
+			<p> Entrer votre mot de passe :</p>
+			<input type="password" name="password"/>
+			<input type="hidden" name="formtype" value="connexion" />
+			<p> </p>
+
+
+			<input type="submit" value="valider"/>
+
+			<input type="reset" value="recommancer"/>
+			</form>
+
+			<form action="./process.php" method="get">
+				<p>Inscription :</p>
+				<p> Entrer votre login : </p>
+				<input type="text" name="logini"/><br/>
+				<p> Entrer votre mot de passe :</p>
+				<input type="password" name="passwordi"/>
+				<input type="hidden" name="formtype" value="inscription" />
+				<p> </p>
+
+
+				<input type="submit" value="valider"/>
+
+				<input type="reset" value="recommancer"/>
+			</form>
+
+		</div>
+		
+		<footer>
+			<p>BACHE Nour</p>
+			<p id="page"> Page n°1 </p>
+		</footer>
+	</body>
+</html>
