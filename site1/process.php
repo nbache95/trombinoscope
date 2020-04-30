@@ -1,62 +1,35 @@
 <?php
-if (isset($_GET["formtype"])){
+	$user = $_POST["user"];
+	$nom = $_POST["nom"];
+	$mail = $_POST["mail"];
+	$mdp = $_POST["mdp"];
+	$filiere = $_POST["filiere"];
+	$groupe = $_POST["groupe"];
+	
+	$etu_exist = FAlSE;
 	$fichier = "utilisateurs.csv";
-	if($_GET["formtype"] == "connexion"){
-
-
-		$doesUserExist = FALSE;
-		$lignes = file($fichier);
-		for($i=0;$i<sizeof($lignes);$i++){	
-			$ligne = $lignes[$i];
-			$ligne = str_replace("\n","",$ligne);
-			if ($ligne == $_GET["login"].",".$_GET["password"]){
-				$doesUserExist = TRUE;
-			}
-		}
-
-		if( $doesUserExist == TRUE ){
-			echo " Bienvenu ! ";
-			echo($_GET["login"]);
-			echo " Connexion établie <br>";
-		}
-		else{
-			echo "Veuillez réssayer";
-		}
+	$lignes = file($fichier);
+	
+	
+	for ($i=0; $i<sizeof($lignes); $i++){
+		$ligne = $lignes[$i];
+		$tableau = explode(";",$ligne);
+		if ($tableau[0]==$user){
+			$etu_exist = TRUE;
+			#echo "<a href="index.html">Accédez à votre espace personnel</a>"
+			break;	
+		}	
 	}
-
-	elseif ($_GET["formtype"] == "inscription") {
-
-		$doesUserExist = FALSE;
-		$lines = file($fichier);
-		for($i=0;$i<sizeof($lines);$i++){	
-			$line = $lines[$i];
-			# remove new line character
-			$line = str_replace("\n","",$line);
-			$t = explode(",", $line);
-			if ($t[0] == $_GET["logini"]){
-				$doesUserExist = TRUE;
-			}
-		}
-
-		if( $doesUserExist == TRUE ){
-			echo($_GET["logini"]);
-			echo " ce nom
-			 est déjà pris";
-		}
-		else{
-			$fichier_end = fopen($fichier,"a");
-			fwrite($fichier_end, $_GET["logini"] .",".$_GET["passwordi"].$fichier_end, $_GET["name"] .",".$fichier_end, $_GET["mail"] ."," "\n");
-			fclose($fichier_end);
-			echo $_GET["logini"]." vient de s'inscrire";
-		}
+	if ($etu_exist==TRUE){
+		echo "Cet utilisateur existe déjà.<p id ='bouton'><a href=connexion.html>Réessayer</a></p>";	
 	}
 	else{
-		header('Location: ./forn.html');
-  		exit();
+		$fiche = fopen($fichier, "a");
+		fwrite($fiche, "\n");
+		$mdphash = md5($mdp);
+		fwrite($fiche, $user .";" .$nom .";" .$mail .";" .$mdphash .";" .$filiere .";" .$groupe);
+		fclose($fiche);
+		header("Location: index.html");
+		exit();
 	} 
-}
-else{
-	header('Location: ./forn.html');
-  	exit();
-}
 ?>

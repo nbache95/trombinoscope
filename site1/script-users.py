@@ -5,13 +5,13 @@ Created on Fri Apr 24 23:51:20 2020
 @author: nbache
 """
 
-    import csv
+import csv
 
 
 def getPassword(length):
     """Générer une chaîne aléatoire de longueur fixe"""
-    str = string.ascii_lowercase
-    return ''.join(random.choice(str) for i in range(length))
+    stri = string.ascii_lowercase
+    return ''.join(random.choice(stri) for i in range(length))
 
 def create_users (n, fichier):
     f = open(fichier)
