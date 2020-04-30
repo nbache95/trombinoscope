@@ -21,7 +21,7 @@
 		}	
 	}
 	if ($etu_exist==TRUE){
-		echo "Cet utilisateur existe déjà.<p id ='bouton'><a href=inscription.html>Réessayer</a></p>";	
+		echo "Cet utilisateur existe déjà.<p id ='bouton'><a href=inscription.php>Réessayer</a></p>";	
 	}
 	else{
 		$fiche = fopen($fichier, "a");
@@ -29,7 +29,7 @@
 		$mdphash = md5($mdp);
 		fwrite($fiche, $user .";" .$nom .";" .$mail .";" .$mdphash .";" .$filiere .";" .$groupe);
 		fclose($fiche);
-		header("Location: inscription.html");
+		header("Location: inscription.php");
 		exit();
 	} 
 ?>

@@ -2,7 +2,7 @@
 <html lang="fr">
 	<head>
 		<meta charset="utf-8"/>
-		<title> Trombinoscope Inscription</title>
+		<title> Trombinoscope </title>
 		<style>
 			
 			body{
@@ -19,19 +19,15 @@
 		<link rel="stylesheet" type="text/css" href="./style.css"/>
 	</head>
 	<body>
-		<header>
-			<h1>Espace Etudiant</h1>
-			<ul>
-				<li><a href="inscription.html">S'inscrire</a></li>
-				<li><a href="connexion.html">Connexion</a></li>
-			</ul>
-		</header>
-		
+		<h1>Espace Etudiant Inscription</h1>
 		<div class = "form">
 			<div align="center">
 				<br /><br />
+								<! -- Formulaire d'inscription -->
 				<form method="POST" action="process.php">
 					<table>
+						
+						<! -- Zone permettant d'enter l'identifiant choisi -->
 						<tr>
 							<td align="center">
 								<label for="user"> Identifiant : </label>
@@ -40,6 +36,8 @@
 								<input type="text" placeholder="votre identifiant" id="user" name="user"/>
 							</td>
 						</tr>
+						
+						<! -- Zone permettant d'entrer son nom -->
 						<tr>
 							<td align="center">
 								<label for="nom"> Nom : </label>
@@ -48,6 +46,8 @@
 								<input type="text" placeholder="votre nom" id="nom" name="nom"/>
 							</td>
 						</tr>
+						
+						<! -- Zone permettant d'entrer son adresse e-mail -->
 						<tr>
 							<td align="center">
 								<label for="mail"> Mail : </label>
@@ -56,7 +56,8 @@
 								<input type="email" placeholder="votre mail" id="mail" name="mail"/>
 							</td>
 						</tr>
-						<tr>
+						
+						<! -- Zone permettant d'entrer le mot de passe choisi -->
 						<tr>
 							<td align="center">
 								<label for="mdp">Mot de Passe : </label>
@@ -65,6 +66,39 @@
 								<input type="password" placeholder="Votre mot de passe" id="mdp" name="mdp"/>
 							</td>
 						</tr>
+						
+						<! -- Liste déroulante prmettant de choisir sa filière  -->
+						<tr>
+
+							<td align="center">
+								
+									<label for="filiere">Quel est votre filière ?</label>
+										<select name="filiere" id="filiere" />
+											<option value="MIPI">MIPI</option>
+											<option value="WS">Web et Systèmes</option>
+											<option value="EG">Economie et Gestion</option>
+										</select>
+								 </form>
+							</td>
+						</tr>
+						
+						<tr>
+							<td align="center">
+									<label for="groupe">Quel est votre Groupe ?</label>
+										<select name="groupe" id="groupe" />
+											<option value="A1">A1</option>
+											<option value="A2">A2</option>
+											<option value="A3">A3</option>
+											<option value="B1">B1</option>
+											<option value="B2">B2</option>
+											<option value="B3">B3</option>
+											<option value="C1">C1</option>
+											<option value="C2">C2</option>
+											<option value="C3">C3</option>
+										</select>
+							</td>
+						</tr>
+						
 						<tr>
 								<td></td>
 								<td align="center">
@@ -73,7 +107,7 @@
 								</td>
 						</tr>
 					</table>	
-				</form>
+				
 			</div>
 		</div>
 		<footer>BACHE Nour LPI - WS UCP</footer>
