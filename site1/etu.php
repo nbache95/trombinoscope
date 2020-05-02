@@ -24,9 +24,8 @@
 
 		<div>
 			<?php
-				$etu = array();
-	
-				$tableau = explode(";",$etu);
+				$user;
+				$tableau = explode(";",$user);
 				$id = $tableau[0];
 				$name = $tableau[1];
 				$mail = $tableau[2];
