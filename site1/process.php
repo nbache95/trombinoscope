@@ -5,6 +5,8 @@
 	$mdp = $_POST["mdp"];
 	$filiere = $_POST["filiere"];
 	$groupe = $_POST["groupe"];
+	$adress = $_POST["adress"];
+	$num = $_POST["num"]
 	
 	$etu_exist = FAlSE;
 	$fichier = "utilisateurs.csv";
@@ -16,20 +18,20 @@
 		$tableau = explode(";",$ligne);
 		if ($tableau[0]==$user){
 			$etu_exist = TRUE;
-			#echo "<a href="index.html">Accédez à votre espace personnel</a>"
+			header("Location: connexion1.html");
 			break;	
 		}	
 	}
 	if ($etu_exist==TRUE){
-		echo "Cet utilisateur existe déjà.<p id ='bouton'><a href=connexion.html>Réessayer</a></p>";	
+		echo "Cet utilisateur existe déjà.<p id ='bouton'><a href=inscription.php>Réessayer</a></p>";	
 	}
 	else{
 		$fiche = fopen($fichier, "a");
 		fwrite($fiche, "\n");
 		$mdphash = md5($mdp);
-		fwrite($fiche, $user .";" .$nom .";" .$mail .";" .$mdphash .";" .$filiere .";" .$groupe);
+		fwrite($fiche, $user .";" .$nom .";" .$mail .";" .$mdphash .";" .$filiere .";" .$groupe .";".$adress .";".$num);
 		fclose($fiche);
-		header("Location: index.html");
+		header("Location: connexion1.php");
 		exit();
 	} 
 ?>

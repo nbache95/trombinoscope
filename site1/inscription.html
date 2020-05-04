@@ -19,7 +19,17 @@
 		<link rel="stylesheet" type="text/css" href="./style.css"/>
 	</head>
 	<body>
-		<h1>Espace Etudiant Inscription</h1>
+	    <header>
+			<h1> Espace Etudiant</h1>
+			<nav>
+    			<ul>
+    				<p>Veuillez vous identifier</p>
+    				<br></br>
+    				<li><a href="inscription.php">S'inscrire</a></li>
+    				<li><a href="connexion1.php">Connexion</a></li>
+    			</ul>
+			</nav>
+		</header>
 		<div class = "form">
 			<div align="center">
 				<br /><br />
@@ -96,6 +106,26 @@
 											<option value="C2">C2</option>
 											<option value="C3">C3</option>
 										</select>
+							</td>
+						</tr>
+						
+						<! -- Zone permettant d'enter son adresse -->
+						<tr>
+							<td align="center">
+								<label for="adress"> Adresse : </label>
+							</td>
+							<td>
+								<input type="text" placeholder="votre adresse" id="adress" name="adress"/>
+							</td>
+						</tr>
+						
+						<! -- Zone permettant d'enter son numero -->
+						<tr>
+							<td align="center">
+								<label for="num"> Adresse : </label>
+							</td>
+							<td>
+								<input type="text" placeholder="votre numero" id="num" name="num"/>
 							</td>
 						</tr>
 						

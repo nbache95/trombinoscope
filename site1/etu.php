@@ -16,30 +16,32 @@
 				<ul>
 					<p>Veuillez vous identifier</p>
 					<br><br>
-					<li><a href="inscription.html">S'inscrire</a></li>
-					<li><a href="connexion1.html">Connexion</a></li>
+					<li><a href="inscription.php">S'inscrire</a></li>
+				<li><a href="connexion1.php">Connexion</a></li>
 				</ul>
 			</nav>
 		</header>
 
 		<div>
 			<?php
-				$user;
-				$tableau = explode(";",$user);
-				$id = $tableau[0];
-				$name = $tableau[1];
-				$mail = $tableau[2];
-				$filiere = $tableau[3];
-				$groupe = $tableau[4]
-		
-				function affiche_infos (){
-					echo("$id");
-					echo("$name");
-					echo("$mail");
-					echo("$filiere");
-					echo("$groupe");
+			    $user = $_GET['user'];
+				function affiche_infos ($user){
+					$tableau = explode(";",$user);
+					$id = $tableau[0];
+					$name = $tableau[1];
+					$mail = $tableau[2];
+					$filiere = $tableau[4];
+					$groupe = $tableau[5];
+                    echo("$id<br></br>");
+                    echo("$name<br></br>");
+                    echo("$mail<br></br>");
+                    echo("$filiere<br></br>");
+                    echo("$groupe<br></br>");
+					return 0;
 				}
+				affiche_infos($user);
 			?>
+			
 			<input class="form-check-input" type="checkbox" name="collapse1[]" id="inlineCheckbox11" value="1">
 		</div>
 		
