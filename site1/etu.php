@@ -24,6 +24,8 @@
 
 		<div>
 			<?php
+				session_start();
+				
 			    $user = $_GET['user'];
 				function affiche_infos ($user){
 					$tableau = explode(";",$user);

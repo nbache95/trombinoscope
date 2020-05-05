@@ -16,11 +16,11 @@
 		}	
 	}
 	if ($etu_exist==TRUE){
-		header("Location: inscription.php");
+		header("Location: https://nbache-trombinoscope.000webhostapp.com/etu.php?user=$ligne");
 		exit();
 	}
 	else{
-		header("Location: https://nbache-trombinoscope.000webhostapp.com/etu.php?user=$ligne");
+		header("Location: inscription.php");
 		exit();	
 	}
 ?>
