@@ -6,7 +6,7 @@
 	$filiere = $_POST["filiere"];
 	$groupe = $_POST["groupe"];
 	$adress = $_POST["adress"];
-	$num = $_POST["num"]
+	$num = $_POST["num"];
 	
 	$etu_exist = FAlSE;
 	$fichier = "utilisateurs.csv";
@@ -29,7 +29,7 @@
 		$fiche = fopen($fichier, "a");
 		fwrite($fiche, "\n");
 		$mdphash = md5($mdp);
-		fwrite($fiche, $user .";" .$nom .";" .$mail .";" .$mdphash .";" .$filiere .";" .$groupe .";".$adress .";".$num);
+		fwrite($fiche, $user .";" .$nom .";" .$mail .";" .$mdphash .";" .$filiere .";" .$groupe.";".$adress.";".$num);
 		fclose($fiche);
 		header("Location: connexion1.php");
 		exit();

@@ -1,0 +1,34 @@
+body{
+    background: #DDA0DD;
+}
+
+ul{
+    display: table;
+    width: 500px;
+    margin: 100px auto;
+    padding: 0;
+}
+ul li{
+    display: table-cell;
+}
+
+#formulaire{
+    width:400px;
+    margin:0 auto;
+    margin-top:10%;
+}
+
+/* Bordered form */
+form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#formulaire h1{
+    width: 38%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}

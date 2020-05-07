@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<header>
-			<h1> Espace Pédagogique</h1>
+			<h1> Espace Etudiant</h1>
 			<nav>
 				<ul>
 					<li><a href="index.html">Accueil</a></li>
@@ -24,10 +24,18 @@
 		<div>
 			<ul>
 				<p>Veuillez vous identifier</p>
-				<br></br>
-				<li><a href="inscription.php">S'inscrire</a></li>
-				<li><a href="connexion1.php">Connexion</a></li>
+				<br><br>
+				<li><a href="inscription.html">S'inscrire</a></li>
+				<li><a href="connexion1.html">Connexion</a></li>
 			</ul>
+		</div>
+		
+		<div>
+			<form method="POST" action="upload.php" enctype="miltipart/form-data">
+				<input type="hidden" name="taille_max" value="100000">
+				Fichier : <input type="file" name="avatar">
+				<input type="submit" name="envoyer" value="Deposer le fichier">
+			</form>
 		</div>
 		
 		
