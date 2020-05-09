@@ -3,6 +3,8 @@
 	$nom = $_POST["nom"];
 	$mail = $_POST["mail"];
 	$mdp = $_POST["mdp"];
+	$filiere = $_POST["filiere"];
+	$groupe = $_POST["groupe"];
 	$adress = $_POST["adress"];
 	$num = $_POST["num"];
 	
@@ -27,7 +29,7 @@
 		$fiche = fopen($fichier, "a");
 		fwrite($fiche, "\n");
 		$mdphash = md5($mdp);
-		fwrite($fiche, $user .";" .$nom .";" .$mail .";" .$mdphash .";" .";".$adress .";".$num);
+		fwrite($fiche, $user .";" .$nom .";" .$mail .";" .$mdphash .";" .$filiere .";" .$groupe.";".$adress.";".$num);
 		fclose($fiche);
 		header("Location: connexion1.php");
 		exit();

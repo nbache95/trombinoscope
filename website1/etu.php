@@ -11,9 +11,10 @@
 	</head>
 	<body>
 		<header>
-			<h1> Espace Pédagogique</h1>
+			<h1> Espace Etudiant</h1>
 			<nav>
 				<ul>
+					<p>Veuillez vous identifier</p>
 					<br><br>
 					<li><a href="inscription.php">S'inscrire</a></li>
 				<li><a href="connexion1.php">Connexion</a></li>
@@ -63,6 +64,17 @@
 			
 			<input class="form-check-input" type="checkbox" name="collapse1[]" id="inlineCheckbox11" value="1">
 		</div>
+		<div>
+		    <p>déposer une photo</p>
+			<form method="POST" action="upload.php" enctype="miltipart/form-data">
+				<input type="hidden" name="taille_max" value="100000">
+				Fichier : <input type="file" name="avatar">
+				<input type="text" placeholder="Votre identifiant" id="id" name="id"/>
+				<input type="text" placeholder="URL de votre photo" id="pic" name="pic"/>
+				<input type="submit" name="envoyer" value="Deposer le fichier">
+			</form>
+		</div>
+		
 		
 		<footer>
 			<p>BACHE Nour</p>
